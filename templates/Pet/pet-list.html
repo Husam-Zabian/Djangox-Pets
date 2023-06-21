@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<a href="{% url 'pet_create' %}"> + New pet</a>
+<ul>
+  {% for pet in object_list %}
+  <li>
+    <a href="{% url 'pet_detail' pet.pk %}">{{ pet.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock content %}
